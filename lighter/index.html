@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lighter</title>
+        <style media="screen">
+        #color {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="snap" >Take Snapshot</button>
+        <div id="color"></div>
+
+        <div id="canvas">
+
+        </div>
+
+        <script src="/bower_components/tinycolor/tinycolor.js" charset="utf-8"></script>
+        <script src="lighter.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var n = new Ambient(2000);
+
+            n.on('light_update', (data) => {
+                console.log(data);
+                console.log(tinycolor(`rgb(${data.r}, ${data.g}, ${data.b})`).getLuminance());
+                document.querySelector('#color').style.backgroundColor = `rgb(${data.r}, ${data.g}, ${data.b})`;
+            });
+        </script>
+    </body>
+</html>

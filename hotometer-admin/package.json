@@ -1,0 +1,14 @@
+{
+  "name": "hotometer-admin",
+  "version": "1.0.0",
+  "description": "hotometer app admin",
+  "main": "index.js",
+  "author": "Jefferson Moura",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "firebase-admin": "^5.5.1",
+    "lodash": "^4.17.4"
+  }
+}
